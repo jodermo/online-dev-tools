@@ -30,7 +30,7 @@ export interface DevToolField {
 export class DevToolsTableComponent implements OnInit {
 
   url = 'https://raw.githubusercontent.com/jodermo/online-dev-tools/main/online-dev-tools.json';
-  displayedColumns: string[] = ['name', 'url', 'description', 'image'];
+  displayedColumns: string[] = ['name', 'url'];
 
   filterValue?: string;
   dataSource?: MatTableDataSource<DevTool>;
@@ -62,8 +62,8 @@ export class DevToolsTableComponent implements OnInit {
   }
 
   async getData() {
-    console.log('getData', this.url);
-    return await fetch(this.url).then((result: Response) => {
+    const v = Date.now();
+    return await fetch(this.url + '?v=' + v).then((result: Response) => {
       return result.json();
     }).catch((error: any) => {
       console.error(error);
@@ -85,6 +85,8 @@ export class DevToolsTableComponent implements OnInit {
             if (category.tools) {
               for (let tool of category.tools) {
                 tool = tool as DevTool;
+                tool.field = field;
+                tool.category = category;
                 this.tools.push(tool);
               }
             }
@@ -92,7 +94,6 @@ export class DevToolsTableComponent implements OnInit {
         }
       }
     }
-
     this.dataSource = new MatTableDataSource(this.tools);
     setTimeout(() => {
       this.updateFilter();

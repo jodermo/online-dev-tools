@@ -1,58 +1,63 @@
-<ng-container *ngIf="dataSource">
-
-  <mat-toolbar>
+<div class="table-wrapper" *ngIf="dataSource">
+  <mat-toolbar color="primary" class="table-header">
     <span>Online Dev Tools</span>
     <span class="spacer"></span>
-    <div>
-      <mat-form-field appearance="fill">
-        <input matInput [ngModel]="filterValue" (keyup)="applyFilter($event)" placeholder="Search" #input>
-        <mat-icon *ngIf="filterValue" matSuffix (click)="filterValue = ''; applyFilter();">close</mat-icon>
-      </mat-form-field>
+    <div class="toolbar-input">
+      <input matInput [ngModel]="filterValue" (keyup)="applyFilter($event)" placeholder="Search" #input>
     </div>
+    <span class="spacer"></span>
   </mat-toolbar>
+  <div class="table-content">
+    <table mat-table [dataSource]="dataSource" class=" mat-elevation-z8">
 
 
 
-  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> Name</th>
+        <td mat-cell *matCellDef="let element">
+          <div class="preview-wrapper">
+            <div class="preview-image">
+              <a href="{{element.url}}" target="_blank">
+                <img [src]="element.image"/>
+              </a>
+
+            </div>
+            <div class="preview-text">
+              <h3>{{element.name}}</h3>
+              <i>{{element.description}}</i>
+            </div>
+          </div>
+
+        </td>
+      </ng-container>
+
+      <!-- Weight URL -->
+      <ng-container matColumnDef="url">
+        <th mat-header-cell *matHeaderCellDef> URL</th>
+        <td mat-cell *matCellDef="let element">
+          <a href="{{element.url}}" target="_blank">{{element.url}}</a>
+        </td>
+      </ng-container>
 
 
-    <!-- Symbol Image -->
-    <ng-container matColumnDef="image">
-      <th mat-header-cell *matHeaderCellDef> Image </th>
-      <td mat-cell *matCellDef="let element">
-        <img [src]="element.image" />
-      </td>
-    </ng-container>
+      <!--<tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>-->
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+      <!-- Row shown when there is no matching data. -->
+      <tr class="mat-row" *matNoDataRow>
+        <td class="mat-cell" colspan="4">No tools matching the search "{{input.value}}"</td>
+      </tr>
+    </table>
+  </div>
+  <mat-toolbar color="secondary" class="table-footer">
+    <span>
+      © 2023 - Moritz Petzka - <a href="https://petzka.com" target="_blank">https://petzka.com</a>
+    </span>
+    <span class="spacer"></span>
+  </mat-toolbar>
+</div>
 
 
-    <!-- Name Column -->
-    <ng-container matColumnDef="name">
-      <th mat-header-cell *matHeaderCellDef> Name </th>
-      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
-    </ng-container>
-
-    <!-- Weight URL -->
-    <ng-container matColumnDef="url">
-      <th mat-header-cell *matHeaderCellDef> URL </th>
-      <td mat-cell *matCellDef="let element">
-        <a href="{{element.url}}" target="_blank">{{element.url}}</a>
-      </td>
-    </ng-container>
-
-    <!-- Symbol Description -->
-    <ng-container matColumnDef="description">
-      <th mat-header-cell *matHeaderCellDef> Description </th>
-      <td mat-cell *matCellDef="let element"> {{element.description}} </td>
-    </ng-container>
-
-
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-
-    <!-- Row shown when there is no matching data. -->
-    <tr class="mat-row" *matNoDataRow>
-      <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
-    </tr>
-  </table>
-</ng-container>
 
