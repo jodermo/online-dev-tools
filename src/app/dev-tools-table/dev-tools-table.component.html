@@ -1,6 +1,6 @@
 <div class="table-wrapper" *ngIf="dataSource">
   <mat-toolbar color="primary" class="table-header">
-    <span>Online Dev Tools</span>
+    <span>Online Dev Tools - Link Collection</span>
     <span class="spacer"></span>
     <div class="toolbar-input">
       <input matInput [ngModel]="filterValue" (keyup)="applyFilter($event)" placeholder="Search" #input>
@@ -25,19 +25,12 @@
 
             </div>
             <div class="preview-text">
-              <h3>{{element.name}}</h3>
-              <i>{{element.description}}</i>
+              <b>{{element.name}}</b><br>
+              <i>{{element.description}}</i><br>
+              <a href="{{element.url}}" target="_blank">{{element.url}}</a>
             </div>
           </div>
 
-        </td>
-      </ng-container>
-
-      <!-- Weight URL -->
-      <ng-container matColumnDef="url">
-        <th mat-header-cell *matHeaderCellDef> URL</th>
-        <td mat-cell *matCellDef="let element">
-          <a href="{{element.url}}" target="_blank">{{element.url}}</a>
         </td>
       </ng-container>
 

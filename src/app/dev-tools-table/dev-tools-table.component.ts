@@ -30,7 +30,9 @@ export interface DevToolField {
 export class DevToolsTableComponent implements OnInit {
 
   url = 'https://raw.githubusercontent.com/jodermo/online-dev-tools/main/online-dev-tools.json';
-  displayedColumns: string[] = ['name', 'url'];
+  displayedColumns: string[] = [
+    'name'
+  ];
 
   filterValue?: string;
   dataSource?: MatTableDataSource<DevTool>;
