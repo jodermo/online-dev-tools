@@ -33,7 +33,7 @@
             "name": "Favicon.ico & App Icon Generator",
             "url": "https://www.favicon-generator.org/",
             "description": "Resize images to all common icon sizes",
-            "image": "https://raw.githubusercontent.com/jodermo/online-dev-tools/main/images/Icon%20Generator.jpg",
+            "image": "https://raw.githubusercontent.com/jodermo/online-dev-tools/main/images/Icon%20Generator.png",
             "keywords": "web, icon, generator"
           }
         ]
@@ -45,7 +45,7 @@
             "name": "Lorem Ipsum Generator",
             "url": "https://www.loremipsum.de/",
             "description": "Text generator for text placeholder",
-            "image": "https://raw.githubusercontent.com/jodermo/online-dev-tools/main/images/Lorem%20Ipsum%20enerator.png",
+            "image": "https://raw.githubusercontent.com/jodermo/online-dev-tools/main/images/Lorem%20Ipsum%20Generator.png",
             "keywords": "web, text, generator, lorem ipsum"
           }
         ]
