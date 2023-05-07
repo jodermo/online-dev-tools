@@ -1,7 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import {MatTableDataSource} from "@angular/material/table";
-import {MatFormField} from "@angular/material/form-field";
-
 
 export interface DevTool {
   name: string;
@@ -31,7 +29,7 @@ export interface DevToolField {
 })
 export class DevToolsTableComponent implements OnInit {
 
-  url = '/assets/online-dev-tools.json';
+  url = 'https://raw.githubusercontent.com/jodermo/online-dev-tools/main/online-dev-tools.json';
   displayedColumns: string[] = ['name', 'url', 'description', 'image'];
 
   filterValue?: string;
@@ -64,6 +62,7 @@ export class DevToolsTableComponent implements OnInit {
   }
 
   async getData() {
+    console.log('getData', this.url);
     return await fetch(this.url).then((result: Response) => {
       return result.json();
     }).catch((error: any) => {

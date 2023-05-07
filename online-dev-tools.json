@@ -9,14 +9,14 @@
             "name": "NormalMap-Online",
             "url": "https://cpetry.github.io/NormalMap-Online/",
             "description": "Convert images to normal maps",
-            "image": "https://github.com/jodermo/online-dev-tools/images/NormalMap-Online.png",
+            "image": "https://raw.githubusercontent.com/jodermo/online-dev-tools/main/images/NormalMap-Online.png",
             "keywords": "texture, converter"
           },
           {
             "name": "Seamless Texture Checker",
             "url": "https://www.pycheung.com/checker/",
             "description": "Validate texture maps",
-            "image": "https://github.com/jodermo/online-dev-tools/images/NormalMap-Online.png",
+            "image": "https://raw.githubusercontent.com/jodermo/online-dev-tools/main/images/NormalMap-Online.png",
             "keywords": "texture, validator"
           }
         ]
@@ -33,7 +33,7 @@
             "name": "Favicon.ico & App Icon Generator ",
             "url": "https://www.favicon-generator.org/",
             "description": "Resize images to all common icon sizes",
-            "image": "https://github.com/jodermo/online-dev-tools/images/NormalMap-Online.png",
+            "image": "https://raw.githubusercontent.com/jodermo/online-dev-tools/main/images/NormalMap-Online.png",
             "keywords": "web, icon, generator"
           }
         ]
@@ -45,7 +45,7 @@
             "name": "Lorem Ipsum Generator",
             "url": "https://www.loremipsum.de/",
             "description": "Text generator for text placeholder",
-            "image": "https://github.com/jodermo/online-dev-tools/images/Lorem Ipsum Generator.png",
+            "image": "https://raw.githubusercontent.com/jodermo/online-dev-tools/main/images/Lorem Ipsum Generator.png",
             "keywords": "web, text, generator, lorem ipsum"
           }
         ]
@@ -62,7 +62,7 @@
             "name": "Free online file converter",
             "url": "https://video.online-convert.com",
             "description": "Convert media files online from one format into another. Please select the target format below:",
-            "image": "https://github.com/jodermo/online-dev-tools/images/Free online file converter.png",
+            "image": "https://raw.githubusercontent.com/jodermo/online-dev-tools/main/images/Free%20online%20file%20converter.png",
             "keywords": "web, icon, generator"
           }
         ]
